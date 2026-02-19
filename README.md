@@ -1,4 +1,8 @@
 # The Cost of Natural Disasters
+Author: Taylor Senters
+
+Course: Engineering Interactive Visual Interfaces for Data Science (CS6024)
+
 ## Overview
 This project is an interactive data visualization dashboard built with D3.js that explores the economic impact of natural disasters over time. It was created as a homework assignment (with provided data and a starter template) and features a recreation of a well-known visualization, supplemented by an aggregated trends chart and interactive data exploration tools.
 
