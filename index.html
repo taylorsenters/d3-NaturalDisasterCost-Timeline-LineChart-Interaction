@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Cost of Natural Disasters</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>    
+    <!-- Header for Page -->
+    <!-- <header>
+        <h1>The Cost of Natural Disasters</h1>
+    </header> -->
+
+    <!-- Dashboard container -->
+    <main class="dashboard">
+        <!-- Container for Timeline Chart -->
+        <div class="chart">
+            <header>
+                <h2>Natural Disasters Timeline</h2>
+            </header>
+            <!-- Buttons display above timeline chart -->
+            <ul class="legend">
+                <li class="legend-btn" category="tropical-cyclone"><span class="legend-symbol"></span> Tropical Cyclone</li>
+                <li class="legend-btn" category="drought-wildfire"><span class="legend-symbol"></span> Drought Wildfire</li>
+                <li class="legend-btn" category="severe-storm"><span class="legend-symbol"></span> Severe Storm</li>
+                <li class="legend-btn" category="flooding"><span class="legend-symbol"></span> Flooding</li>
+                <li class="legend-btn" category="winter-storm-freeze"><span class="legend-symbol"></span> Winter Storm Freeze</li>
+            </ul>
+            <div class="svg">
+                <svg id="timeline"></svg>
+            </div>
+        </div>
+
+        <!-- Container for Line Chart -->
+        <div class="chart">
+            <header>
+                <h2>Natural Disasters Cost per Year</h2>
+            </header>
+            <div class="svg">
+                <svg id="line"></svg>
+            </div>
+        </div>
+    </main>
+
+    <!-- tooltips -->
+    <div id="tooltip"></div>
+
+    <!-- D3 bundle -->
+    <script src="js/d3.v6.min.js"></script>
+
+    <!-- Our JS code - INCLUDING the new files-->
+    <script src="js/line.js"></script>  
+    <script src="js/timelineCircles.js"></script> 
+    <script src="js/main.js"></script>
+    
+
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+/* styling for page body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    margin: 10px;
+    padding: 20px;
+    color: #333;
+}
+
+/* styling for header */
+header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* styling for flex dashboard container */
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* styling for each chart container */
+.chart {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* d3 Axis Styling */
+
+/* style text size and color */
+.axis text {
+    font-size: 11px;
+    fill: #666;
+}
+/* style x-axis tick marks */
+.x-axis .tick line {
+    stroke: #ccc;
+}
+/* don't display main x-axis line */
+.x-axis path {
+    display: none; 
+}
+/* style y-axis so it's dashed */
+.y-axis .tick line {
+    stroke: #ccc;
+    stroke-dasharray: 4, 4; 
+}
+/* don't display main y-axis line */
+.y-axis path {
+    display: none;
+}
+
+/* Use media query and show the flex items vertically if screen width is less than 1100px */
+@media screen and (max-width: 950px) {
+    .dashboard {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Tooltip */
+#tooltip {
+    position: absolute;
+    display: none;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 12px;       
+    font-size: 12px;
+    font-weight: 500;
+    padding: 10px;
+    min-width: 160px;
+    color: #333;
+    text-align: center;
+}
+.tooltip-title {
+    color: #111;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.tooltip-label {
+    color: #111;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.tooltip-data {
+    color: #111;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+#tooltip ul {
+    margin: 5px 0 0 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px; 
+}
+
+#tooltip li {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* Legend */
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+.legend-btn {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #fff;
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-size: 12px;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    opacity: 1;
+}
+/* indicate hover */
+.legend-btn:hover  {
+    opacity: 0.5;
+    box-shadow: none;
+    border: 1px dashed #ddd;
+}
+
+/* "gray out"/ button to indicate filtered out */
+.legend-btn.inactive {
+    background: #fcfcfc;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    opacity: 0.3;
+}
+/* display legend symbol as small circle */
+.legend-symbol {
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
+    border-radius: 50%; 
+    border: 2px solid gray;
+    display: inline-block;
+}
+/* style button symbols to match category color */
+.legend-btn[category="tropical-cyclone"] .legend-symbol {
+    background: #081d58;
+}
+.legend-btn[category="drought-wildfire"] .legend-symbol {
+    background: #ffffd9;
+}
+.legend-btn[category="severe-storm"] .legend-symbol {
+    background: #c7e9b4;
+}
+.legend-btn[category="flooding"] .legend-symbol {
+    background: #41b6c4;
+}
+.legend-btn[category="winter-storm-freeze"] .legend-symbol {
+    background: #ccc;
+}
